@@ -8,6 +8,8 @@ use Inertia\Inertia;
 
 Route::get('/', [FrontEndController::class, 'Home']);
 Route::get('/About', [FrontEndController::class, 'About']);
+Route::get('/Product', [FrontEndController::class, 'Product']);
+Route::get('/create', [FrontEndController::class, 'create']);
 
 // Route::get('/', function () {
 //     return Inertia::render('Home', [

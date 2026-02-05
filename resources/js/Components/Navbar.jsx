@@ -33,10 +33,10 @@ function Navbar() {
                                     About
                                 </Link>
                                 <Link
-                                    href="service.html"
+                                    href="/Product"
                                     className="nav-item nav-link"
                                 >
-                                    Service
+                                    Product
                                 </Link>
                                 <Link
                                     href="price.html"
