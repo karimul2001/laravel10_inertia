@@ -27,4 +27,19 @@ class FrontEndController extends Controller
     {
         return Inertia::render('ProductEntry');
     }
+    public function store(Request $request)
+    {
+       // dd($request);
+       DB::table('products')->insert([
+        'name' => $request->name,
+        'details' => $request->details,
+        'sku' => $request->sku,
+        'price' => $request->price,
+        'stock' => $request->stock,
+        'image' => '',
+        'category_id' =>$request->category_id
+
+       ]);
+        return Inertia::render('ProductStore');
+    }
 }
