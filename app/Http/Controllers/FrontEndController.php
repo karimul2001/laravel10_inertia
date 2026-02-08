@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class FrontEndController extends Controller
 {
@@ -19,7 +19,7 @@ class FrontEndController extends Controller
     }
     public function Product()
     {
-       $products = DB::table('products')->get();
+        $products = DB::table('products')->get();
         return Inertia::render('Product', ['products' => $products]);
     }
 
@@ -29,17 +29,17 @@ class FrontEndController extends Controller
     }
     public function store(Request $request)
     {
-       // dd($request);
-       DB::table('products')->insert([
-        'name' => $request->name,
-        'details' => $request->details,
-        'sku' => $request->sku,
-        'price' => $request->price,
-        'stock' => $request->stock,
-        'image' => '',
-        'category_id' =>$request->category_id
+        // dd($request);
+        DB::table('products')->insert([
+            'name' => $request->name,
+            'details' => $request->details,
+            'sku' => $request->sku,
+            'price' => $request->price,
+            'stock' => $request->stock,
+            'image' => '',
+            'category_id' => $request->category_id
 
-       ]);
+        ]);
         return Inertia::render('ProductStore');
     }
 }

@@ -10,7 +10,7 @@ import { usePage, Link } from "@inertiajs/react";
 
 function Product(props) {
     const { products } = usePage().props;
-    
+
     return (
         <>
             <Frontlayout>
@@ -24,23 +24,42 @@ function Product(props) {
                                         <h5 className="d-inline-block text-primary text-uppercase border-bottom border-10">
                                             Prduct List
                                         </h5>
-                                        <span className="float-end"><Link href="/create">New Product</Link></span>
+                                        <span className="float-end">
+                                            <Link
+                                                href="/create"
+                                                className="btn btn-primary"
+                                            >
+                                                <i className="bi bi-plus-circle me-1"></i>
+                                                New Product
+                                            </Link>
+                                        </span>
                                     </div>
-                                    <table className="table table-border">
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Details</th>
-                                            <th>Price</th>
-                                        </tr>
-                                        {products.map(({ id, name , details, price}) => (
+                                    <table className="table table-bordered table-striped table-hover">
+                                        <thead>
                                             <tr>
-                                                <td>{id}</td>
-                                                <td>{name}</td>
-                                                <td>{details}</td>
-                                                <td>{price}</td>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Details</th>
+                                                <th>Price</th>
                                             </tr>
-                                        ))}
+                                        </thead>
+                                        <tbody>
+                                            {products.map(
+                                                ({
+                                                    id,
+                                                    name,
+                                                    details,
+                                                    price,
+                                                }) => (
+                                                    <tr key={id}>
+                                                        <td>{id}</td>
+                                                        <td>{name}</td>
+                                                        <td>{details}</td>
+                                                        <td>{price}</td>
+                                                    </tr>
+                                                ),
+                                            )}
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
