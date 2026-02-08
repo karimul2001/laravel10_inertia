@@ -40,6 +40,7 @@ function Product(props) {
                                                 <th>ID</th>
                                                 <th>Name</th>
                                                 <th>Details</th>
+                                                <th>Stock</th>
                                                 <th>Price</th>
                                             </tr>
                                         </thead>
@@ -49,12 +50,14 @@ function Product(props) {
                                                     id,
                                                     name,
                                                     details,
+                                                    stock,
                                                     price,
                                                 }) => (
                                                     <tr key={id}>
                                                         <td>{id}</td>
                                                         <td>{name}</td>
                                                         <td>{details}</td>
+                                                        <td>{stock}</td>
                                                         <td>{price}</td>
                                                     </tr>
                                                 ),
